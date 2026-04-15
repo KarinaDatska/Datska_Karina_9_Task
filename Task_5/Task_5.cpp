@@ -29,4 +29,26 @@ int main() {
         {"PiraeusBank", 12.0, 26.5, 600000, "Greece"}
     };
 
+    int realBanks = 7;
+
+    string filename = "banks.txt";
+
+    ofstream outFile(filename);
+    if (!outFile) {
+        cout << "Error opening file for writing!" << endl;
+        return 1;
+    }
+
+    for (int i = 0; i < realBanks; i++) {
+        outFile << banks[i].name << " "
+            << banks[i].depositRate << " "
+            << banks[i].creditRate << " "
+            << banks[i].clientsCount << " "
+            << banks[i].country << endl;
+    }
+    outFile.close();
+
+    Bank loadedBanks[MAX_BANKS];
+    int count = 0;
+
 }
