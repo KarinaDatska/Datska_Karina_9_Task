@@ -51,4 +51,41 @@ int main() {
     Bank loadedBanks[MAX_BANKS];
     int count = 0;
 
+    ifstream inFile(filename);
+    if (!inFile) {
+        cout << "Error opening file for reading!" << endl;
+        return 1;
+    }
+
+    while (count < MAX_BANKS &&
+        inFile >> loadedBanks[count].name
+        >> loadedBanks[count].depositRate
+        >> loadedBanks[count].creditRate
+        >> loadedBanks[count].clientsCount
+        >> loadedBanks[count].country) {
+        count++;
+    }
+
+    inFile.close();
+
+    int bestDepIdx = 0;
+    int bestCredIdx = 0;
+
+    for (int i = 1; i < count; i++) {
+        if (loadedBanks[i].depositRate > loadedBanks[bestDepIdx].depositRate) {
+            bestDepIdx = i;
+        }
+
+        if (loadedBanks[i].creditRate < loadedBanks[bestCredIdx].creditRate) {
+            bestCredIdx = i;
+        }
+    }
+    cout << "\n\t----- Результати аналізу -----\n" << endl;
+    cout << "\tНайкращий депозит: " << loadedBanks[bestDepIdx].name
+        << " (" << loadedBanks[bestDepIdx].depositRate << "%)" << endl;
+
+    cout << "\tНайкращий кредит: " << loadedBanks[bestCredIdx].name
+        << " (" << loadedBanks[bestCredIdx].creditRate << "%)\n" << endl;
+
+    return 0;
 }
