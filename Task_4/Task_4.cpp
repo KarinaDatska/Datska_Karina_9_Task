@@ -19,13 +19,17 @@ bool isPalindrome(string word) {
     return true;
 }
 
-
 int main() {
     SetConsoleCP(65001);
     SetConsoleOutputCP(65001);
 
     ifstream inputFile("input.txt");
-    ofstream outputFile("output.txt");
+    ofstream outputFile("output.txt"); 
+
+    if (!inputFile.is_open()) {
+        cout << "Не вдалося відкрити файл!" << endl;
+        return 1;
+    }
 
     string line;
 
@@ -62,6 +66,10 @@ int main() {
 
     inputFile.close();
     outputFile.close();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2);
+    cout << "\n\n\tГотово!\n\tПеревір output.txt\n\n\n" << endl;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 
     return 0;
 }
