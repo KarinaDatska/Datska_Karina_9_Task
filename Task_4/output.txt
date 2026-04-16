@@ -1,0 +1,15 @@
+Речення: This is a level test.
+Паліндром: level
+
+Речення: Anna went home.
+Паліндром: Anna
+
+Речення: Madam, I'm Adam.
+Паліндром: Madam
+
+Речення: Wow!
+Паліндром: Wow
+
+Речення: 12321 is a number.
+Паліндром: 12321
+
