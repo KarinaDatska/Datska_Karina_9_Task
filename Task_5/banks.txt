@@ -1,0 +1,7 @@
+PrivatBank 12.5 32 1000000 Ukraine
+Oschadbank 11 28.5 800000 Ukraine
+Raiffeisen 13.2 30 500000 Austria
+Monobank 14 29.5 1200000 Ukraine
+Ukreximbank 10.5 27 300000 Ukraine
+CreditAgricole 13.8 31 450000 France
+PiraeusBank 12 26.5 600000 Greece
